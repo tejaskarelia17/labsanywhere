@@ -1,0 +1,51 @@
+{
+  "name": "labs_anywhere_server",
+  "version": "0.0.1",
+  "description": "The server-side component of the Labs Anywhere Project",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install && webpack",
+    "start:ws:dev": "concurrently -k \"webpack -d -w\"  \"nodemon index.js | bunyan\"",
+    "start:lw:dev": "nodemon log_writer.js | bunyan",
+    "start": "concurrently -k \"node index.js |bunyan\" \"node log_writer.js |bunyan\""
+  },
+  "keywords": [
+    "labs",
+    "anywhere",
+    "server"
+  ],
+  "author": "Tejas Karelia",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "0.5.1",
+    "bluebird": "3.5.0",
+    "body-parser": "1.17.1",
+    "bunyan": "1.8.10",
+    "bunyan-rabbitmq-stream": "0.0.4",
+    "concurrently": "3.4.0",
+    "connect-redis": "3.3.0",
+    "elasticsearch": "13.0.1",
+    "express": "4.15.2",
+    "express-session": "1.15.2",
+    "history": "3.3.0",
+    "ioredis": "2.5.0",
+    "mongodb": "2.2.26",
+    "passport": "0.3.2",
+    "passport-local": "1.0.0",
+    "react": "15.5.4",
+    "react-bootstrap": "0.31.0",
+    "react-dom": "15.5.4",
+    "react-predictive-input": "1.2.5",
+    "react-router": "2.8.1",
+    "socketio": "1.0.0",
+    "uuid": "3.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "6.24.1",
+    "babel-loader": "7.0.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "nodemon": "1.11.0",
+    "webpack": "2.5.1"
+  }
+}

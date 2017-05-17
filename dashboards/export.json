@@ -1,0 +1,215 @@
+[
+  {
+    "_id": "476e5880-3a53-11e7-8c05-af446f248227",
+    "_type": "dashboard",
+    "_source": {
+      "title": "webserver_usage_stats",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"size_x\":6,\"size_y\":3,\"panelIndex\":1,\"type\":\"visualization\",\"id\":\"b82521e0-3a52-11e7-8c05-af446f248227\",\"col\":1,\"row\":1},{\"size_x\":6,\"size_y\":3,\"panelIndex\":2,\"type\":\"visualization\",\"id\":\"1e3202a0-3a53-11e7-8c05-af446f248227\",\"col\":7,\"row\":1},{\"size_x\":12,\"size_y\":5,\"panelIndex\":3,\"type\":\"search\",\"id\":\"398f3ce0-3a51-11e7-8c05-af446f248227\",\"col\":1,\"row\":4,\"columns\":[\"req.method\",\"req.url\",\"res.statusCode\",\"responseTime\",\"username\",\"reqId\"],\"sort\":[\"time\",\"desc\"]}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"legendOpen\":false}},\"P-2\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "ad6c3dc0-3a56-11e7-8c05-af446f248227",
+    "_type": "dashboard",
+    "_source": {
+      "title": "user_activity",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"23748740-3a55-11e7-8c05-af446f248227\",\"panelIndex\":1,\"row\":1,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"e20f3c90-3a55-11e7-8c05-af446f248227\",\"panelIndex\":2,\"row\":5,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"columns\":[\"username\",\"msg\"],\"id\":\"814adb40-3a54-11e7-8c05-af446f248227\",\"panelIndex\":3,\"row\":1,\"size_x\":6,\"size_y\":8,\"sort\":[\"time\",\"desc\"],\"type\":\"search\"}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "dcfe0450-3a57-11e7-8c05-af446f248227",
+    "_type": "dashboard",
+    "_source": {
+      "title": "centralized_logs",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"size_x\":12,\"size_y\":2,\"panelIndex\":1,\"type\":\"visualization\",\"id\":\"9c44f4a0-3a57-11e7-8c05-af446f248227\",\"col\":1,\"row\":1},{\"size_x\":12,\"size_y\":6,\"panelIndex\":2,\"type\":\"search\",\"id\":\"6f98cc60-3a57-11e7-8c05-af446f248227\",\"col\":1,\"row\":3,\"columns\":[\"level\",\"msg\",\"hostname\",\"pid\"],\"sort\":[\"time\",\"desc\"]}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "398f3ce0-3a51-11e7-8c05-af446f248227",
+    "_type": "search",
+    "_source": {
+      "title": "access_logs",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "req.method",
+        "req.url",
+        "res.statusCode",
+        "responseTime",
+        "username",
+        "reqId"
+      ],
+      "sort": [
+        "time",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"applogs-*\",\"highlightAll\":true,\"version\":true,\"filter\":[],\"query\":{\"query_string\":{\"query\":\"category: accessLogs\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "814adb40-3a54-11e7-8c05-af446f248227",
+    "_type": "search",
+    "_source": {
+      "title": "user_activity_log",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "username",
+        "msg"
+      ],
+      "sort": [
+        "time",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"applogs-*\",\"highlightAll\":true,\"version\":true,\"filter\":[],\"query\":{\"query_string\":{\"query\":\"_exists_:username AND category: (NOT accessLogs)\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "398e47f0-3a50-11e7-8c05-af446f248227",
+    "_type": "search",
+    "_source": {
+      "title": "app_logs",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "level",
+        "msg",
+        "hostname",
+        "pid"
+      ],
+      "sort": [
+        "time",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"applogs-*\",\"highlightAll\":true,\"version\":true,\"filter\":[],\"query\":{\"query_string\":{\"query\":\"category: (NOT accessLogs)\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "6f98cc60-3a57-11e7-8c05-af446f248227",
+    "_type": "search",
+    "_source": {
+      "title": "application_logs",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "level",
+        "msg",
+        "hostname",
+        "pid"
+      ],
+      "sort": [
+        "time",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"applogs-*\",\"highlightAll\":true,\"version\":true,\"filter\":[],\"query\":{\"query_string\":{\"query\":\"NOT _exists_:username AND category: (NOT accessLogs)\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "23748740-3a55-11e7-8c05-af446f248227",
+    "_type": "visualization",
+    "_source": {
+      "title": "activity_over_time",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"customInterval\":\"2h\",\"extended_bounds\":{},\"field\":\"time\",\"interval\":\"auto\",\"min_doc_count\":1},\"schema\":\"segment\",\"type\":\"date_histogram\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"time per 3 hours\"},\"type\":\"category\"}],\"defaultYExtents\":false,\"drawLinesBetweenPoints\":true,\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"interpolate\":\"linear\",\"legendPosition\":\"right\",\"radiusRatio\":9,\"scale\":\"linear\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Count\"},\"drawLinesBetweenPoints\":true,\"mode\":\"stacked\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"setYExtents\":false,\"showCircles\":true,\"times\":[],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"value\"}]},\"title\":\"activity_over_time\",\"type\":\"histogram\"}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":false}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"index\":\"applogs-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query_string\":{\"query\":\"_exists_:username AND category: (NOT accessLogs)\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "1e3202a0-3a53-11e7-8c05-af446f248227",
+    "_type": "visualization",
+    "_source": {
+      "title": "webserver_response_times_millis",
+      "visState": "{\"title\":\"webserver_response_times_millis\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"time per 3 hours\"},\"type\":\"category\"}],\"defaultYExtents\":false,\"drawLinesBetweenPoints\":true,\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"interpolate\":\"linear\",\"legendPosition\":\"right\",\"radiusRatio\":9,\"scale\":\"linear\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Average responseTime\"},\"drawLinesBetweenPoints\":true,\"mode\":\"stacked\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"setYExtents\":false,\"showCircles\":true,\"times\":[],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Average responseTime\"},\"type\":\"value\"}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"responseTime\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"time\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"index\":\"applogs-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query_string\":{\"query\":\"category: accessLogs\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "b82521e0-3a52-11e7-8c05-af446f248227",
+    "_type": "visualization",
+    "_source": {
+      "title": "requests_to_webserver",
+      "visState": "{\"title\":\"requests_to_webserver\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"time per 3 hours\"},\"type\":\"category\"}],\"defaultYExtents\":false,\"drawLinesBetweenPoints\":true,\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"interpolate\":\"linear\",\"legendPosition\":\"right\",\"radiusRatio\":9,\"scale\":\"linear\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Count\"},\"drawLinesBetweenPoints\":true,\"mode\":\"stacked\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"setYExtents\":false,\"showCircles\":true,\"times\":[],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"value\"}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"time\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"index\":\"applogs-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query_string\":{\"query\":\"category: accessLogs\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "e20f3c90-3a55-11e7-8c05-af446f248227",
+    "_type": "visualization",
+    "_source": {
+      "title": "failed_login_attempts",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"customInterval\":\"2h\",\"extended_bounds\":{},\"field\":\"time\",\"interval\":\"auto\",\"min_doc_count\":1},\"schema\":\"segment\",\"type\":\"date_histogram\"},{\"enabled\":false,\"id\":\"3\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"msg: \\\"Login attempted\\\"\"}}},\"label\":\"\"}]},\"schema\":\"group\",\"type\":\"filters\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"time per 3 hours\"},\"type\":\"category\"}],\"defaultYExtents\":false,\"drawLinesBetweenPoints\":true,\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"interpolate\":\"linear\",\"legendPosition\":\"right\",\"radiusRatio\":9,\"scale\":\"linear\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Count\"},\"drawLinesBetweenPoints\":true,\"mode\":\"stacked\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"setYExtents\":false,\"showCircles\":true,\"times\":[],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Count\"},\"type\":\"value\"}]},\"title\":\"failed_login_attempts\",\"type\":\"histogram\"}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":false,\"colors\":{\"Count\":\"#E24D42\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"index\":\"applogs-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query_string\":{\"query\":\"_exists_:username AND category: (NOT accessLogs) AND msg: \\\"Login attempted\\\"\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "9c44f4a0-3a57-11e7-8c05-af446f248227",
+    "_type": "visualization",
+    "_source": {
+      "title": "app_logs_over_time",
+      "visState": "{\"title\":\"app_logs_over_time\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"time per 3 hours\"},\"type\":\"category\"}],\"defaultYExtents\":false,\"drawLinesBetweenPoints\":true,\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"interpolate\":\"linear\",\"legendPosition\":\"right\",\"radiusRatio\":9,\"scale\":\"linear\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Count\"},\"drawLinesBetweenPoints\":true,\"mode\":\"stacked\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"setYExtents\":false,\"showCircles\":true,\"times\":[],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"value\"}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"time\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"index\":\"applogs-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"query_string\":{\"query\":\"NOT _exists_:username AND category: (NOT accessLogs)\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  }
+]
