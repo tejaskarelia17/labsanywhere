@@ -58,7 +58,7 @@ The primary data (Admin, Laboratories, Doctors and Patients) for the system will
 
 This project is being currently being developed and we target to commit our first version of the code on second weekend of April, 2017.
 
-#   Thank You! for your patience.
+#   We are commiting changes to build v1 branch.
 
 
 
